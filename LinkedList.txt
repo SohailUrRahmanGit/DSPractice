@@ -1,6 +1,6 @@
-public class LinkedList {
-    var head: Node<Value>
-    var tail: Node<Value>
+public struct LinkedList<Value> {
+    var head: Node<Value>?
+    var tail: Node<Value>?
     
     init() {}
     
@@ -8,13 +8,20 @@ public class LinkedList {
         return head == nil
     }
     
-    public mutating func push() {}
-    public mutating func append() {}
+    public mutating func push(value: Value) { 
+      head = Node(value: value, next: head)
+      if tail == nil {
+          tail = head
+      }
+    }
+    
+    
+    public mutating func append(){}
     public mutating func insertAfter(){}
-    public mutating func pop() {}
+    public mutating func pop(){}
     public mutating func removeAfter() {}
-    public mutating func removeLast( {}
-    public mutating func node(at:) {}
+    public mutating func removeLast() {}
+   // public mutating func node(at:) {}
 }
 
 
