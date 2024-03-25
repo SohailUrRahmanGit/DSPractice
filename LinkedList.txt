@@ -14,9 +14,17 @@ public struct LinkedList<Value> {
           tail = head
       }
     }
+
+    public mutating func append(value: Value) {
+     guard !isEmpty else {
+         push(value: value)
+         return
+     }
+      tail!.next = Node(value: value)
+      tail = tail!.next
+   }
     
     
-    public mutating func append(){}
     public mutating func insertAfter(){}
     public mutating func pop(){}
     public mutating func removeAfter() {}
